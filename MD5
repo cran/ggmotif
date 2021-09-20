@@ -1,0 +1,15 @@
+a015e080f57c4ee9ffe24e1b1ded394b *DESCRIPTION
+1cdcf2d6c21110d8901749f2ec17f485 *NAMESPACE
+ac4652a60fc84406067aa2bdb459f353 *R/getMotifFromTxt.R
+d6ae5db9b4088c2a42dd85d633ef461d *R/getMotifFromXML.R
+67ab4ceacb51bd8c44647e2d72876980 *R/ggmotif.R
+b3f54b32ce05a1fa391a2a2bb8928696 *R/motif_location.R
+3e8f1d921b9d2b2fe47122495661c9fd *R/motif_with_tree.R
+eaf792550ee0bc4c8c33cebc09e3991b *inst/examples/meme.txt
+2385a1651fdfeb6e2ce33ebb978c50ff *inst/examples/meme.xml
+30181989e87cee6cf878340fdb2d55bb *inst/examples/tree.nwk
+5f591aa94f7320781ddd07a4001c23f8 *man/getMotifFromTxt.Rd
+4ac0baf1b7cebf68ce953f7c88772da1 *man/getMotifFromXML.Rd
+7561cd14dba7e6fbef7b1f7c64def2a8 *man/ggmotif.Rd
+367842b457ad08544f2fb5f71191bac7 *man/motif_location.Rd
+bcfd0bbd003de0b82dea2e9f7744b15c *man/motif_with_tree.Rd
