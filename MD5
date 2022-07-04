@@ -1,6 +1,6 @@
-ccdf0e1ac12748db298f8901839e6b0c *DESCRIPTION
+b05faa6bf440b4e0cbe7f6221db1e47d *DESCRIPTION
 cec58bca693aa8003eda1e6e8467f3c1 *NAMESPACE
-f9505388e807938afc9849fa6db42278 *R/getMotifFromMEME.R
+2d35be7c83f72a0f83f252a8d8e6aa33 *R/getMotifFromMEME.R
 1d73cc7e1371157555c0ec0edfe47260 *R/motifLocation.R
 09ef881b28ba2eab2e98fc4878fb2d97 *inst/demo_data/ara.aligned.fa
 6642a589322caa9fd4ad0dd3d424e298 *inst/demo_data/ara.fa
