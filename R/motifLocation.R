@@ -7,6 +7,7 @@
 #'
 #' @param data A data frame file from getMotifFromXML function.
 #' @param tree.path A file path of the correponding phylogenetic tree.
+#' The IDs of the phylogenetic tree must be same as the IDs of sequences used to identify motifs using MEME.
 #'
 #' @importFrom magrittr %>%
 #' @importFrom dplyr select mutate
@@ -16,6 +17,13 @@
 #' @importFrom grid unit
 #' @importFrom patchwork align_plots
 #' @importFrom tidyverse tidyverse_conflicts
+#' @importFrom ggseqlogo ggseqlogo
+#' @importFrom treeio as_tibble
+#' @importFrom treeio as.treedata
+#' @importFrom ggtree geom_tippoint
+#'
+#'
+#'
 #'
 #' @examples
 #' # without phylogenetic tree
@@ -33,12 +41,12 @@
 #'
 #' @return Return a plot
 utils::globalVariables(c(
-  "seq.id", "position", "width", "input.seq.id", "motif_id",".",
-  "start.position", "end.position", "start", "end", "y", "Genes",
+  "seq.id", "position", "width", "input.seq.id", "motif_id",".","tree.anno",
+  "start.position", "end.position", "start", "end", "y", "Genes","treepath","Group",
   "Motif", "x.min", "x.max", "y.min", "y.max","isTip","label","motif_extract"
 ))
 
-motifLocation <- function(data, tree = NULL) {
+motifLocation <- function(data, tree = NULL, tree.anno = NULL) {
   if (is.null(tree)) {
     my.gene <- data %>%
       dplyr::select(
@@ -91,8 +99,17 @@ motifLocation <- function(data, tree = NULL) {
       ggtree::ggtree(branch.length = "none") +
       theme(plot.margin = unit(c(0, -3, 0, 0), "cm"))
 
-    my.tree <- ape::read.tree(file = tree) %>% ggtree::ggtree()
+    if(is.null(tree.anno)){
+      my.tree <- ape::read.tree(file = tree) %>% ggtree::ggtree()
+    }else{
 
+      my.tree <- ape::read.tree(file = tree) %>%
+        treeio::as_tibble() %>%
+        dplyr::left_join(tree.anno, by = "label") %>%
+        treeio::as.treedata() %>%
+        ggtree::ggtree() +
+        ggtree::geom_tippoint(aes(color = Group),size = 2)
+    }
     tree.location <- my.tree[["data"]] %>%
       dplyr::filter(isTip == "TRUE") %>%
       dplyr::select("label", "y") %>%

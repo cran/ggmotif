@@ -6,7 +6,8 @@
 \arguments{
 \item{data}{A data frame file from getMotifFromXML function.}
 
-\item{tree.path}{A file path of the correponding phylogenetic tree.}
+\item{tree.path}{A file path of the correponding phylogenetic tree.
+The IDs of the phylogenetic tree must be same as the IDs of sequences used to identify motifs using MEME.}
 }
 \value{
 Return a plot
