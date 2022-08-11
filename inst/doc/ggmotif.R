@@ -16,7 +16,7 @@ motif.info <- getMotifFromMEME(data = filepath, format="txt")
 filepath <- system.file("examples", "meme.xml", package="ggmotif")
 motif.info.2 <- getMotifFromMEME(data = filepath, format="xml")
 
-## ----echo=TRUE----------------------------------------------------------------
+## ----echo=TRUE, fig.height=6, fig.width=8, fig.align='center'-----------------
 filepath <- system.file("examples", "meme.xml", package = "ggmotif")
 motif_extract <- getMotifFromMEME(data = filepath, format="xml")
 motif_plot <- motifLocation(data = motif_extract)
@@ -25,7 +25,7 @@ motif_plot +
 
 ggplot2::ggsave(filename = "1.png", width = 6, height = 6, dpi = 300)
 
-## ----echo=TRUE, fig.height=4--------------------------------------------------
+## ----echo=TRUE, fig.height=6, fig.width=8, fig.align='center'-----------------
 filepath <- system.file("examples", "meme.xml", package = "ggmotif")
 treepath <- system.file("examples", "ara.nwk", package="ggmotif")
 motif_extract <- getMotifFromMEME(data = filepath, format="xml")
@@ -34,6 +34,20 @@ motif_plot +
   ggsci::scale_fill_aaas()
 
 ggplot2::ggsave(filename = "2.png", width = 8, height = 6, dpi = 300)
+
+## -----------------------------------------------------------------------------
+library(tidyverse)
+filepath <- system.file("examples", "meme.xml", package = "ggmotif")
+treepath <- system.file("examples", "ara.nwk", package="ggmotif")
+
+motif_extract <- getMotifFromMEME(data = filepath, format="xml")
+tree.anno.path <- system.file("examples", "tree.anno.txt", package="ggmotif")
+tree.anno = data.table::fread(tree.anno.path) %>% 
+  dplyr::mutate(Group = as.character(Group))
+
+motif_plot <- motifLocation(data = motif_extract, tree = treepath, tree.anno = tree.anno)
+motif_plot +
+  ggsci::scale_fill_aaas()
 
 ## ----echo=TRUE----------------------------------------------------------------
 library(tidyverse)
@@ -50,7 +64,7 @@ motif.info %>%
   ggseqlogo::ggseqlogo() +
   theme_bw()
 
-## ----echo=TRUE, fig.height=8--------------------------------------------------
+## ----echo=TRUE, fig.height=8, fig.width=8, fig.align='center'-----------------
 filepath <- system.file("examples", "meme.txt", package = "ggmotif")
 motif.info <- getMotifFromMEME(data = filepath, format = "txt")
 

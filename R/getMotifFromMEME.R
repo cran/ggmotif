@@ -13,6 +13,7 @@
 #' @importFrom stringr str_sub str_split
 #' @importFrom XML xmlParse xmlRoot xmlSize xmlToList
 #' @importFrom dplyr select filter mutate
+#' @importFrom data.table fread
 #'
 #' @examples
 #' filepath <- system.file("examples", "meme.txt", package = "ggmotif")

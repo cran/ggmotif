@@ -1,7 +1,7 @@
 Package: ggmotif
 Type: Package
 Title: Extract and Visualize Motif Information from MEME Software
-Version: 0.2.0
+Version: 0.2.1
 Author: Xiang LI
 Maintainer: Xiang LI <lixiang117423@foxmail.com>
 Description: Extract and visualize motif information from XML file from MEME software. 
@@ -16,11 +16,11 @@ Encoding: UTF-8
 Depends: R (>= 3.5.0)
 Imports: tidyverse, dplyr, XML, magrittr, ggplot2, stringr, ggtree,
         ape, patchwork, ggseqlogo, memes, universalmotif, treeio,
-        cowplot, ggsci
+        cowplot, ggsci, data.table
 RoxygenNote: 7.2.1
 Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2022-08-08 15:25:00 UTC; xiang
+Packaged: 2022-08-10 19:55:01 UTC; xiang
 Repository: CRAN
-Date/Publication: 2022-08-08 16:20:02 UTC
+Date/Publication: 2022-08-11 10:30:05 UTC

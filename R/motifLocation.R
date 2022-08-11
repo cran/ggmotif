@@ -15,7 +15,7 @@
 #' @importFrom ggtree ggtree geom_tiplab
 #' @importFrom ape read.tree
 #' @importFrom grid unit
-#' @importFrom patchwork align_plots
+#' @importFrom patchwork align_plots plot_layout
 #' @importFrom tidyverse tidyverse_conflicts
 #' @importFrom ggseqlogo ggseqlogo
 #' @importFrom treeio as_tibble
@@ -95,20 +95,20 @@ motifLocation <- function(data, tree = NULL, tree.anno = NULL) {
 
     return(p)
   } else {
-    p.tree <- ape::read.tree(tree) %>%
-      ggtree::ggtree(branch.length = "none") +
-      theme(plot.margin = unit(c(0, -3, 0, 0), "cm"))
-
+    my.tree <- ape::read.tree(file = tree) %>% ggtree::ggtree()
     if(is.null(tree.anno)){
-      my.tree <- ape::read.tree(file = tree) %>% ggtree::ggtree()
+      p.tree <- ape::read.tree(tree) %>%
+        ggtree::ggtree(branch.length = "none") +
+        theme(plot.margin = unit(c(0, -3, 0, 0), "cm"))
     }else{
-
-      my.tree <- ape::read.tree(file = tree) %>%
+      p.tree <- ape::read.tree(tree) %>%
         treeio::as_tibble() %>%
         dplyr::left_join(tree.anno, by = "label") %>%
         treeio::as.treedata() %>%
-        ggtree::ggtree() +
-        ggtree::geom_tippoint(aes(color = Group),size = 2)
+        ggtree::ggtree(branch.length = "none") +
+        ggtree::geom_tippoint(aes(color = Group),size = 2) +
+        theme(plot.margin = unit(c(0, -3, 0, 0), "cm"))
+
     }
     tree.location <- my.tree[["data"]] %>%
       dplyr::filter(isTip == "TRUE") %>%
@@ -160,7 +160,7 @@ motifLocation <- function(data, tree = NULL, tree.anno = NULL) {
         plot.margin = unit(c(0, 0, 0, -3), "cm")
       ) -> p.motif
 
-    p <- p.tree + p.motif
+    p <- p.tree + p.motif + patchwork::plot_layout(guides = "collect")
     return(p)
   }
 }

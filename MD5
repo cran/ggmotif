@@ -1,7 +1,7 @@
-5cfda99825e0071f1af54742f6797e93 *DESCRIPTION
-1b6bb6fa5a7ea4cba5f94944c5df01eb *NAMESPACE
-7ba1ed4df9e86b9e2792fcbd3d9feb68 *R/getMotifFromMEME.R
-11a48bafac290e4c7523b61a3c19f55f *R/motifLocation.R
+824c9f283af109ede4cb42092ecc18ea *DESCRIPTION
+8b24aa87e60cc1204c4099edc179be55 *NAMESPACE
+1083152e8bf9cda7526e9eefff56094b *R/getMotifFromMEME.R
+0b5b618fec5a0442e360d0f0cdacab01 *R/motifLocation.R
 7218de10dd60654cc040c5011e9d86f7 *build/vignette.rds
 09ef881b28ba2eab2e98fc4878fb2d97 *inst/demo_data/ara.aligned.fa
 6642a589322caa9fd4ad0dd3d424e298 *inst/demo_data/ara.fa
@@ -10,9 +10,9 @@
 d2cf71d53c800aecb3b8c66c724476e2 *inst/demo_data/meme.txt
 92a01fcc919aa5906b8c44a6532d675f *inst/demo_data/meme.xml
 9bfe081c93f8ff578444563a49509de2 *inst/demo_data/tree.anno.txt
-7be808e206c43eb6c9b6a482effa7fdf *inst/doc/ggmotif.R
-18135294399d492b02dc7a1dc3fe40c9 *inst/doc/ggmotif.Rmd
-8e77b7158bc3c05e055f90485ead0226 *inst/doc/ggmotif.html
+8def773aa2a19b0de85b1fb488ab23a0 *inst/doc/ggmotif.R
+d6104823d2b8c1990e3566b5e7f06ad7 *inst/doc/ggmotif.Rmd
+39cd0be411bdb5701f24e40c2bb53159 *inst/doc/ggmotif.html
 09ef881b28ba2eab2e98fc4878fb2d97 *inst/examples/ara.aligned.fa
 6642a589322caa9fd4ad0dd3d424e298 *inst/examples/ara.fa
 7a42cbbd73dff683b92a1fcba497f17d *inst/examples/ara.nwk
@@ -30,7 +30,7 @@ dd3f49fe2899afcd505909fd45061d13 *inst/image/3.png
 6642a589322caa9fd4ad0dd3d424e298 *vignettes/ara.fa
 7a42cbbd73dff683b92a1fcba497f17d *vignettes/ara.nwk
 2e3c8b3e88f855ef30100e2d0f3d1f92 *vignettes/featured.jpg
-18135294399d492b02dc7a1dc3fe40c9 *vignettes/ggmotif.Rmd
+d6104823d2b8c1990e3566b5e7f06ad7 *vignettes/ggmotif.Rmd
 943247222cef6057af335747b219899d *vignettes/meme.html
 d2cf71d53c800aecb3b8c66c724476e2 *vignettes/meme.txt
 92a01fcc919aa5906b8c44a6532d675f *vignettes/meme.xml
